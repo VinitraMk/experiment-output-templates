@@ -1,0 +1,11 @@
+#{$brand}-btn {
+    height: pxToRem(35);
+    border: none;
+    padding: pxToRem(8) pxToRem(16);
+    border-radius: 5px;
+
+    &-primary {
+        background: map-get($green, '00BCD4');
+        color: white;
+    }
+}

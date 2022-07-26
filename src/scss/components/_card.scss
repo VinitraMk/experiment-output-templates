@@ -1,0 +1,25 @@
+#{$brand}-card {
+    cursor: pointer;
+    background: transparent;
+    height: pxToRem(218);
+    width: pxToRem(177);
+    box-shadow: 2px 2px 4px 2px #ccc;
+    border-radius: 8px;
+
+    &:hover {
+        background: rgba(238, 238, 238, 0.6);
+    }
+    &__img {
+        height: pxToRem(177);
+        width: pxToRem(177);
+        border-radius: 8px 8px 0 0;
+    }
+    &__caption {
+        margin-top: 8px;
+        display: block;
+        font-size: 14px;
+        color: black;
+        cursor: pointer;
+        text-align: center;
+    }
+}

@@ -1,0 +1,4 @@
+{
+    "model_keys": ["average_accuracy", "average_loss"],
+    "view": "grid"
+}

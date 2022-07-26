@@ -1,0 +1,19 @@
+#{$brand}-breadcrumbs {
+    display: flex;
+    align-items: center;
+    height: pxToRem(31);
+    padding: pxToRem(10) 0;
+    margin-top: pxToRem(20);
+    padding-left: pxToRem(20);
+
+    &__item {
+        font-size: pxToRem(18);
+        font-weight: 600;
+        color: black;
+        text-decoration: none;
+
+        &.active {
+            color: map-get($green, '00BCD4');
+        }
+    }
+}

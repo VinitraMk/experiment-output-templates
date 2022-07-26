@@ -1,0 +1,122 @@
+/*
+***
+    The mixin below is used to
+    width and height values
+***
+*/
+@mixin size($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+/*
+***
+    The mixin below is used to
+    border radius
+***
+*/
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+    background-clip: padding-box;
+}
+/*
+***
+    The mixin below is used to
+    background color
+***
+*/
+@mixin bg-color($color) {
+    background-color: $color;
+}
+/*
+***
+    The mixin below is used to
+    positions
+***
+*/
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+/*
+***
+    The mixin below is used to
+    margins and padings
+***
+*/
+@mixin space($type: margin, $direction: all, $amount: null) {
+    @if $type == padding {
+        @if $direction == all {
+            padding: $amount;
+        }
+        @else if $direction == top {
+            padding-top: $amount
+        }
+        @else if $direction == left {
+            padding-left: $amount
+        }
+        @else if $direction == right {
+            padding-right: $amount
+        }
+        @else if $direction == y {
+            padding-top: $amount;
+            padding-bottom: $amount;
+        }
+        @else if $direction == x {
+            padding-left: $amount;
+            padding-right: $amount;
+        }
+        @else {
+            padding-bottom: $amount
+        }
+    }
+    @else {
+        @if $direction == all {
+            margin: $amount;
+        }
+        @else if $direction == top {
+            margin-top: $amount
+        }
+        @else if $direction == left {
+            margin-left: $amount
+        }
+        @else if $direction == right {
+            margin-right: $amount
+        }
+        @else if $direction == leftright {
+            margin-left: $amount;
+            margin-right: $amount
+        }
+        @else {
+            margin-bottom: $amount
+        }
+    }
+}
+/*
+***
+    The mixin below is used to
+    border for all sides
+***
+*/
+@mixin border-all( $width, $style, $color) {
+    border: $width $style $color;
+}
+/*
+***
+    The mixin below is used to
+    specifit borders
+***
+*/
+@mixin border($direction, $width, $style, $color) {
+    border-#{$direction}: $width $style $color;
+}
+
+@mixin ellipsis() {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
