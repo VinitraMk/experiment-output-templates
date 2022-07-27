@@ -1,15 +1,21 @@
 .title {
     &-1 {
-        font-size: pxToRem(24);
+        font-size: 24px;
         margin: 0;
     }
     &-2 {
-        font-size: pxToRem(18);
+        font-size: 18px;
         color: black;
         margin: 0
     }
     &-3 {
-        font-size: pxToRem(18);
+        font-size: 18px;
+        font-weight: 600;
+        color: black;
+        margin: 0;
+    }
+    &-4 {
+        font-size: 16px;
         font-weight: 600;
         color: black;
         margin: 0;
