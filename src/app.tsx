@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { lazy, ReactElement } from 'react';
 //import './scss/custom.scss'
 import MainLayout from './layouts/mainLayout';
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
@@ -18,7 +18,6 @@ function App(): ReactElement {
             </Routes>
         </MainLayout>
   </BrowserRouter>
-    {/*<div>{'react setup from scratch without cra testing ts'}</div>*/}
     </>
   );
 }

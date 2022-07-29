@@ -6,7 +6,7 @@ const getJsonData = async(url) => {
     return data;
 }
 export const getModelConfig = async() => {
-    const url = buildApiUrl('data/model_details.json');
+    const url = buildApiUrl('eogconfig.json');
     return await getJsonData(url);
 }
 
@@ -16,6 +16,6 @@ export const getPackageDetails = async() => {
 }
 
 export const getModelDetails = async(filename) => {
-    const url = buildApiUrl(`data/${filename}`);
+    const url = buildApiUrl(`experimental_logs/${filename}`);
     return await getJsonData(url);
 }

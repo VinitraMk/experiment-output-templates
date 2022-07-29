@@ -4,7 +4,7 @@ const NodePolyfillPlugin = require("node-polyfill-webpack-plugin")
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     entry: {
         eog: [
             './src/index.js',
@@ -13,9 +13,9 @@ module.exports = {
     },
     devtool: 'source-map',
     output: {
-        path: path.join(__dirname, '/reports'),
+        path: '../../reports',
         filename: 'bundle.js',
-        publicPath: '/'
+        publicPath: '../../'
     },
     devtool: 'inline-source-map',
     devServer: {
@@ -70,7 +70,7 @@ module.exports = {
             stream: false,
             tls: false,
             __dirname: false,
-            http: false,
+            http: require.resolve('stream-http'),
             buffer: false,
             url: false,
             fs: false

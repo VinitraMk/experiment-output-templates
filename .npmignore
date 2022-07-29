@@ -3,4 +3,5 @@
 /build
 /dist
 /node_modules
-/reports
+/reports/experimental_logs
+/reports/visualizations

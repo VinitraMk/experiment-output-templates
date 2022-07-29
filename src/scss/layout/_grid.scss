@@ -1,7 +1,8 @@
 #{$brand}-grid {
     display: flex;
     flex-wrap: wrap;
-    padding: 20px 0;
-    height: calc(100% - 40px);
+    padding: pxToRem(20) 0;
+    height: calc(100% - 20px);
     width: 100%;
+    overflow-y: auto;
 }
