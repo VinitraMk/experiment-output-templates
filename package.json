@@ -1,14 +1,16 @@
 {
   "name": "experiment-report-generator",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start-test": "webpack-dev-server --open --mode development --hot",
-    "start": "npm run build && node make-report.js",
+    "start": "webpack-dev-server --open --mode development --hot",
     "start-script": "",
     "build": "webpack --mode production",
     "make-report": "npm run build && node make-report.js"
+  },
+  "bin": {
+    "makereport": "start-script.js"
   },
   "keywords": [],
   "author": "",

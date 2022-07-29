@@ -1,9 +1,0 @@
-{
-    "eog": {
-        "output_directory": "output",
-        "experiment_logs_directory": "experimental_logs",
-        "visualizations_directory": "visualizations",
-        "report_output_directory": "./dist/reports",
-        "report_template_directory": "/src/assets/reports"
-    }
-}
