@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const NodePolyfillPlugin = require("node-polyfill-webpack-plugin")
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     mode: 'development',
@@ -12,12 +13,14 @@ module.exports = {
     },
     devtool: 'source-map',
     output: {
-        path: path.join(__dirname, '/build'),
-        filename: 'bundle.js'
+        path: path.join(__dirname, '/reports'),
+        filename: 'bundle.js',
+        publicPath: '/'
     },
     devtool: 'inline-source-map',
     devServer: {
-        static: './build'
+        static: './reports',
+        historyApiFallback: true
     },
     module: {
         rules: [
@@ -33,7 +36,16 @@ module.exports = {
             },
             {
                 test: /\.(png|woff|woff2|eot|ttf|svg)$/, // to import images and fonts
-                loader: "file-loader",
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: '/images',
+                            publicPath: '/build/images'
+                        }
+                    }
+                ]
             },
             {
                 test: /\.(scss|css)$/, // styles files,
@@ -68,7 +80,13 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './src/index.html'
         }),
-        new NodePolyfillPlugin()
+        new NodePolyfillPlugin(),
+        new CopyWebpackPlugin({
+            patterns: [
+                { from: './src/assets/data/model_details.json', to: './data' },
+                { from: './package.json', to: './data' }
+            ]
+        })
     ],
     target: "web",
 }

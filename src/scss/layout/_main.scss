@@ -1,20 +1,20 @@
 #{$brand} {
     &-header {
-        height: pxToRem(26);
+        height: 26px;
         width: 100%;
         background: map-get($green, '00BCD4');
-        padding: pxToRem(13) pxToRem(20);
+        padding: 13px 20px;
         &__title {
             margin: 0;
             color: white;
             font-weight: bold;
-            font-size: pxToRem(20);
+            font-size: 20px;
         }
     }
     &-main {
-        padding: pxToRem(20);
+        padding: 20px;
         height: calc(100% - 173px);
         width: 100%;
-        overflow: hidden;
+        overflow: auto;
     }
 };

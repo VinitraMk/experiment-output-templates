@@ -1,5 +1,5 @@
 import React from 'react';
-import standardReport from '../../assets/images/standard-report.png';
+import '../../assets/images/standard-report.png';
 import { RouterProps, useNavigate } from 'react-router-dom';
 
 type LandingProps = {};
@@ -14,7 +14,7 @@ const Landing = (props: LandingProps) => {
     return (
         <>
             <div className='eog-card' onClick={handleStandardReportClick}>
-                <img src={standardReport} className='eog-card__img'/>
+                <img src='/images/standard-report.png' className='eog-card__img'/>
                 <label className='eog-card__caption'>Standard Report</label>
             </div>
         </>

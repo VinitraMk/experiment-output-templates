@@ -1,18 +1,30 @@
-import packageJson from '../../../package.json';
-import React from 'react';
-import configJson from '../../assets/data/model_details.json';
-import { reportBuildService } from './services/reportBuildService';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { getModelConfig, getPackageDetails } from '../../services/apiService';
+import { PackageDetails } from '../../models/PackageDetails';
+import { ModelConfig } from '../../models/ModelConfig';
 
 const StandardReport = (props: any) => {
-
+    const [configJson, setConfig] = useState(new ModelConfig());
+    const [packageJson, setPackageConfig] = useState(new PackageDetails());
+    const navigate = useNavigate()
     const buildReport = () => {
-        reportBuildService.buildReport();
+        navigate('/standard-report-view')
     }
+    useEffect(() => {
+        getModelConfig().then(res => {
+            setConfig(res);
+        });
+        getPackageDetails().then(res => {
+            setPackageConfig(res);
+        })
+    }, [])
+    
     return (<>
         <h3 className='title-3 mb-2'>Report Layout</h3>
         <p>{configJson.view}</p>
         <h3 className='title-3 mb-2'>Model Details</h3>
-        {configJson.model_keys.map(x => <p className='ma-0'>{x}</p>)}
+        {configJson.model_keys.map((x: any) => <p className='ma-0'>{x}</p>)}
         <h3 className='title-3 my-2'>Model Details Directories</h3>
         <div>
             <dt className='eog-list-data__label'>Experimental Logs Directory</dt>
@@ -33,7 +45,7 @@ const StandardReport = (props: any) => {
             </dd>
         </div>
         <span className='float-l d-iblock mt-4'>
-            <button className='eog-btn eog-btn-primary' onClick={buildReport}>Build Report</button>
+            <button className='eog-btn eog-btn-primary' onClick={buildReport}>View Report Template</button>
         </span>
     </>);
 }
