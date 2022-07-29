@@ -14,7 +14,7 @@ function App(): ReactElement {
             <Routes>
                 <Route path="/" element={<Landing/>}/>
                 <Route path="/standard-report" element={<StandardReport/>}/>
-                <Route path="/standard-report/view" element={<GridView/>}/>
+                <Route path="/standard-report-view" element={<GridView/>}/>
             </Routes>
         </MainLayout>
   </BrowserRouter>

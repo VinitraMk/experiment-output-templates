@@ -9,7 +9,7 @@ const StandardReport = (props: any) => {
     const [packageJson, setPackageConfig] = useState(new PackageDetails());
     const navigate = useNavigate()
     const buildReport = () => {
-        navigate('/standard-report/view')
+        navigate('/standard-report-view')
     }
     useEffect(() => {
         getModelConfig().then(res => {

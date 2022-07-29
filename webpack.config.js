@@ -83,8 +83,7 @@ module.exports = {
         new NodePolyfillPlugin(),
         new CopyWebpackPlugin({
             patterns: [
-                { from: './src/assets/images', to: './images' },
-                { from: './src/assets/data', to: './data' },
+                { from: './src/assets/data/model_details.json', to: './data' },
                 { from: './package.json', to: './data' }
             ]
         })

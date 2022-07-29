@@ -1,5 +1,5 @@
 {
-    "model_keys": ["experiment_name", "average_accuracy", "average_loss", "learning_rate", "batch_size"],
+    "model_keys": ["model", "final_accuracy", "average_loss", "lr", "batch_size"],
     "view": "grid",
     "files_list": [
         {

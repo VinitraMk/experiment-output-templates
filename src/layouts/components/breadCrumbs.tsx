@@ -7,9 +7,13 @@ const BreadCrumbs = () => {
     return (
         <div className="eog-breadcrumbs">
             <NavLink to="/" className="eog-breadcrumbs__item">Report Templates</NavLink>
-            {location.pathname === '/standard-report' && <>
+            {location.pathname.startsWith('/standard-report') && <>
                 <ChevronRight className="mx-1"/>
                 <NavLink to="/standard-report" className="eog-breadcrumbs__item">Standard Report</NavLink>
+            </>}
+            {location.pathname === '/standard-report-view' && <>
+                <ChevronRight className="mx-1"/>
+                <NavLink to="/standard-report-view" className="eog-breadcrumbs__item">View Report</NavLink>
             </>}
         </div>
     );
