@@ -4,7 +4,8 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --open --mode development --hot",
+    "start-test": "webpack-dev-server --open --mode development --hot",
+    "start": "npm run build && node make-report.js",
     "start-script": "",
     "build": "webpack --mode production",
     "make-report": "npm run build && node make-report.js"
@@ -18,8 +19,6 @@
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
     "file-loader": "^6.2.0",
-    "fs-extra": "^10.1.0",
-    "json-loader": "^0.5.7",
     "node-polyfill-webpack-plugin": "^2.0.0",
     "node-sass": "^7.0.1",
     "node-static": "^0.7.11",
@@ -27,7 +26,6 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0",
     "sass-loader": "^13.0.2",
-    "stream-http": "^3.2.0",
     "style-loader": "^3.3.1",
     "ts-loader": "^9.3.1"
   },
@@ -49,7 +47,7 @@
     "output_directory": "output",
     "experiment_logs_directory": "experimental_logs",
     "visualizations_directory": "visualizations",
-    "report_output_directory": "./dist/reports",
+    "report_output_directory": "./reports",
     "report_template_directory": "/src/assets/reports"
   },
   "browser": {

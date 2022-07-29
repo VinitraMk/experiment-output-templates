@@ -13,13 +13,13 @@ module.exports = {
     },
     devtool: 'source-map',
     output: {
-        path: path.join(__dirname, '/build'),
+        path: path.join(__dirname, '/reports'),
         filename: 'bundle.js',
         publicPath: '/'
     },
     devtool: 'inline-source-map',
     devServer: {
-        static: './build',
+        static: './reports',
         historyApiFallback: true
     },
     module: {

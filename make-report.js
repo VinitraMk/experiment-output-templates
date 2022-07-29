@@ -1,6 +1,6 @@
 
-const images_dest = './build/images';
-const data_dest = './build/data';
+const images_dest = './reports/images';
+const data_dest = './reports/data';
 const packageJson = require('./package.json');
 const fs = require('fs');
 const path = require('path');
