@@ -1,5 +1,7 @@
 
-# Experiment Report Generator (ERG)
+# Experiment Report Generator (ERG) [![npm version](https://badge.fury.io/js/experiment-report-generator.svg)](https://badge.fury.io/js/experiment-report-generator)
+
+[![forthebadge made-with-electron](/src/assets/images/made-with-react.svg)](https://reactjs.org/)
 
 This a react app which can be installed as an npm package. Primary
 purpose of this package is to provide a very simple way for a data engineer
