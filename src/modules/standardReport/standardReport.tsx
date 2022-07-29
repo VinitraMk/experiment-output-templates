@@ -14,7 +14,7 @@ const StandardReport = (props: any) => {
     useEffect(() => {
         getModelConfig().then(res => {
             setConfig(res);
-            setPackageConfig(res.eog);
+            setPackageConfig(res.erg);
         });
     }, [])
     

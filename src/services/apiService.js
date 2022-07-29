@@ -6,7 +6,7 @@ const getJsonData = async(url) => {
     return data;
 }
 export const getModelConfig = async() => {
-    const url = buildApiUrl('eogconfig.json');
+    const url = buildApiUrl('ergconfig.json');
     return await getJsonData(url);
 }
 
