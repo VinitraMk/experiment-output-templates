@@ -20,7 +20,7 @@ exp_logs.forEach(fn => {
     if (ob !== null && ob !== undefined) {
         filesubstr = fn.substring(0, ob.index + 15);
         visfn = vis_files.filter(x => x.includes(filesubstr))[0];
-        if (visfn !== null || visfn !== undefined) {
+        if (visfn !== null && visfn !== undefined && visfn !== '') {
             obj = {
                 'details_file': fn,
                 'image_file': visfn
@@ -52,6 +52,7 @@ build_files.forEach(x => {
     }
 });
 
+console.log('\nStartin app at port 5000 from ./reports')
 const cmd = `python -m http.server 5000 -d ${project_root}/reports`
 //const outlog = execSync(cmd).toString();
 //console.log(outlog)
