@@ -1,5 +1,4 @@
 #! /usr/bin/env node
-const {exec} = require('child_process')
 const fs = require('fs')
 const { dirname, resolve } = require('path');
 const appDir = dirname(require.main.filename);
