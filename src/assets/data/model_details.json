@@ -1,4 +1,9 @@
 {
-    "model_keys": ["average_accuracy", "average_loss"],
-    "view": "grid"
+    "model_keys": ["experiment_name", "average_accuracy", "average_loss", "learning_rate", "batch_size"],
+    "view": "grid",
+    "files_list": [
+        {
+            "image_file": "alexnet_26072022-122806_loss_plot.png",
+            "details_file": "alexnet_26072022-122806.json"
+        }]
 }
