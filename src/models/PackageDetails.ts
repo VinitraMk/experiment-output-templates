@@ -1,7 +1,5 @@
 export class PackageDetails {
-    eog: any = {
-        experiment_logs_directory: '',
-        output_directory: '',
-        visualizations_directory: ''
-    }
+    experiment_logs_directory: string = '';
+    output_directory: string = '';
+    visualizations_directory: string = '';
 }

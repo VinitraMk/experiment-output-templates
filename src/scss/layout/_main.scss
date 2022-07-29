@@ -14,7 +14,6 @@
     &-main {
         padding: 20px;
         height: calc(100% - 173px);
-        width: 100%;
-        overflow: auto;
+        width: calc(100% - 20px);
     }
 };

@@ -26,7 +26,7 @@ const GridView = () => {
                         const detailsJson = x.detailsJson;
                         return (
                             <div key={`gridrow-${i}`} className='eog-card-img'>
-                                <img key={`gridrowimg-${i}`} className='eog-card-img__img' src={`/images/${x.image_file}`}/>
+                                <img key={`gridrowimg-${i}`} className='eog-card-img__img' src={`/visualizations/${x.image_file}`}/>
                                 {configJson.model_keys.map((y: any) => {
                                     const modelParams = JSON.parse(detailsJson['model_params'])
                                     if (y === 'final_accuracy' || y === 'average_loss') {

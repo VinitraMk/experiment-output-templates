@@ -1,0 +1,16 @@
+{
+    "model_keys": ["model", "final_accuracy", "average_loss", "lr", "batch_size"],
+    "view": "grid",
+    "files_list": [
+        {
+            "image_file": "alexnet_26072022-122806_loss_plot.png",
+            "details_file": "alexnet_26072022-122806.json"
+        }],
+    "eog": {
+        "output_directory": "output",
+        "experiment_logs_directory": "experimental_logs",
+        "visualizations_directory": "visualizations",
+        "report_output_directory": "./reports",
+        "report_template_directory": "/src/assets/reports"
+    }
+}

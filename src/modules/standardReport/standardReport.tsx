@@ -14,10 +14,8 @@ const StandardReport = (props: any) => {
     useEffect(() => {
         getModelConfig().then(res => {
             setConfig(res);
+            setPackageConfig(res.eog);
         });
-        getPackageDetails().then(res => {
-            setPackageConfig(res);
-        })
     }, [])
     
     return (<>
@@ -29,19 +27,19 @@ const StandardReport = (props: any) => {
         <div>
             <dt className='eog-list-data__label'>Experimental Logs Directory</dt>
             <dd className='eog-list-data__value'>
-            {packageJson.eog.experiment_logs_directory}
+            {packageJson.experiment_logs_directory}
             </dd>
         </div>
         <div>
             <dt className='eog-list-data__label'>Output Directory</dt>
             <dd className='eog-list-data__value'>
-            {packageJson.eog.output_directory}
+            {packageJson.output_directory}
             </dd>
         </div>
         <div>
             <dt className='eog-list-data__label'>Visualizations Directory</dt>
             <dd className='eog-list-data__value'>
-            {packageJson.eog.visualizations_directory}
+            {packageJson.visualizations_directory}
             </dd>
         </div>
         <span className='float-l d-iblock mt-4'>
