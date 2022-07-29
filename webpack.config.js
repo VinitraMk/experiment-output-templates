@@ -1,7 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const NodePolyfillPlugin = require("node-polyfill-webpack-plugin")
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     mode: 'development',
@@ -80,12 +79,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './src/index.html'
         }),
-        new NodePolyfillPlugin(),
-        new CopyWebpackPlugin({
-            patterns: [
-                { from: './package.json', to: './data' }
-            ]
-        })
+        new NodePolyfillPlugin()
     ],
     target: "web",
 }
