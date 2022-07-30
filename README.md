@@ -2,7 +2,7 @@
 # Experiment Report Generator (ERG) [![npm version](https://badge.fury.io/js/experiment-report-generator.svg)](https://badge.fury.io/js/experiment-report-generator)
 
 
-[![forthebadge made-with-electron](/src/assets/images/made-with-react.svg)](https://reactjs.org/)
+[![forthebadge made-with-electron](https://raw.githubusercontent.com/VinitraMk/experiment-report-generator/master/demo/made-with-react.svg)](https://reactjs.org/)
 
 This a react app which can be installed as an npm package. Primary
 purpose of this package is to provide a very simple way for a data engineer
@@ -30,14 +30,12 @@ and displaying them in a simple grid.
 
 #### Steps
 
-    1. Create a folder called reports to hold all your outputs. Make sure
-    to save your outputs in two distinct folders inside /reports.
+    1. Create a folder called reports to hold all your outputs in your project root. Make sure to save all your outputs in specific folders inside reports based on their content.
 
     2. Create two more folders - visualizations and experimental_logs. These two
         will hold files for visual outputs and json data of individual experiments respectively.
         The internal files have been labelled based on the experiment id they belong to.
-        for ex - visualizations/exp_1_loss_plot.png, experimental_logs/exp_1.json. This is to 
-        ensure we always display the details of the right experiment.
+        for ex - visualizations/exp_1_loss_plot.png, experimental_logs/exp_1.json. This is to ensure we always display the details related to the relevant experiment only.
 
     3. Change directory to the root of your project i.e just outside
     of your reports folder.
@@ -76,7 +74,7 @@ the UI of the react app.
     
 ## Features
 
-- Simple Previews
+- Simple Previews of your experiments
 - Creation of instant views to showcase experiment progress
 in a simple, effective manner with very little effort.
 - Currently only supports creation of a grid display of your
@@ -93,4 +91,4 @@ to create user defined customized views.
 
 ## Screenshots
 
-![App Screenshot](https://i.imgur.com/Pjew4j2.gif)
+![App Screenshot](https://raw.githubusercontent.com/VinitraMk/experiment-report-generator/master/demo/erg-doc.gif)

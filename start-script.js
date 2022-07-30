@@ -1,13 +1,14 @@
 #! /usr/bin/env node
 const fs = require('fs')
-const { dirname, resolve } = require('path');
+const { dirname, resolve, join } = require('path');
 const appDir = dirname(require.main.filename);
 const node_modules_index = appDir.indexOf('node_modules');
 const project_root = node_modules_index !== -1 ? appDir.substring(0, node_modules_index - 1) : appDir;
 const reports_build_path = resolve(__dirname, './reports');
 const build_files = fs.readdirSync(reports_build_path);
-const { execSync, exec } = require('child_process')
 const config = require(`${project_root}\\ergconfig.json`);
+var express = require("express");
+var PORT = 5000
 
 // Build exp log files
 const exp_logs = fs.readdirSync(`${project_root}/${config.erg["experiment_logs_directory"]}`)
@@ -35,7 +36,7 @@ config['files_list'] = all_files;
 fs.writeFileSync(`${project_root}\\ergconfig.json`, JSON.stringify(config));
     
 // copy all files
-console.log('Copying files to project root', project_root)
+console.log('\nCopying files to project root', project_root)
 console.log('\tCopying ergconfig.json')
 fs.copyFileSync(`${project_root}/ergconfig.json`, `${project_root}/reports/ergconfig.json`)
 
@@ -52,8 +53,14 @@ build_files.forEach(x => {
     }
 });
 
-console.log('\nStartin app at port 5000 from ./reports')
-const cmd = `python -m http.server 5000 -d ${project_root}/reports`
-//const outlog = execSync(cmd).toString();
-//console.log(outlog)
-exec(cmd)
+// starting an express server
+console.log('\nStating app server at port ', PORT)
+var DIST_DIR = join(project_root, './reports')
+var app = express();
+app.use(express.static(DIST_DIR))
+
+app.get('*', function(req, res) {
+    res.sendFile(join(DIST_DIR, 'index.html'));
+});
+
+app.listen(PORT);
