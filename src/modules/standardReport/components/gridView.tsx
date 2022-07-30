@@ -29,7 +29,7 @@ const GridView = () => {
                                 <img key={`gridrowimg-${i}`} className='eog-card-img__img' src={`/visualizations/${x.image_file}`}/>
                                 {configJson.model_keys.map((y: any) => {
                                     const modelParams = JSON.parse(detailsJson['model_params'])
-                                    if (y === 'final_accuracy' || y === 'average_loss') {
+                                    if (y === 'final_accuracy' || y === 'average_loss' || y === 'model_filename') {
                                         return (<label key={`gridrowlabel-${y}`} className='eog-card-img__caption'>{y}: {detailsJson[y]}</label>)
                                     } else {
                                         return (<label key={`gridrowlabel-${y}`} className='eog-card-img__caption'>{y}: {modelParams[y]}</label>)

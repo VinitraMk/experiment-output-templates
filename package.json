@@ -1,6 +1,6 @@
 {
   "name": "experiment-report-generator",
-  "version": "3.1.1",
+  "version": "3.1.8",
   "description": "A report generator app",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -8,7 +8,8 @@
     "start-script": "",
     "build": "webpack --mode production",
     "build-prod": "webpack --mode production --config webpack.prod.js",
-    "make-report": "npm run build && node make-report.js"
+    "make-report": "npm run build && node make-report.js",
+    "package": "npm run build && npm publish"
   },
   "bin": {
     "makereport": "start-script.js"
@@ -20,6 +21,7 @@
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
     "css-loader": "^6.7.1",
+    "express": "^4.18.1",
     "file-loader": "^6.2.0",
     "node-polyfill-webpack-plugin": "^2.0.0",
     "node-sass": "^7.0.1",
@@ -45,8 +47,8 @@
   },
   "eog": {
     "output_directory": "output",
-    "experiment_logs_directory": "experimental_logs",
-    "visualizations_directory": "visualizations",
+    "experiment_logs_directory": "reports/experimental_logs",
+    "visualizations_directory": "reports/visualizations",
     "report_output_directory": "./reports",
     "report_template_directory": "/src/assets/reports"
   },
